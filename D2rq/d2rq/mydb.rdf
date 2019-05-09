@@ -1,0 +1,1802 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:d2rq="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:jdbc="http://d2rq.org/terms/jdbc/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:map="http://localhost:2020/#"
+    xmlns:vocab="http://localhost:2020/vocab/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:db="http://localhost:2020/" > 
+  <rdf:Description rdf:about="http://localhost:2020/#customer_create_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>customer.create_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer create_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_create_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_last_name">
+    <d2rq:column>staff.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>country.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_password">
+    <d2rq:column>staff.password</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff password</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_password"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_actor_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>actor.actor_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor actor_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_actor_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_film_id__ref">
+    <d2rq:join>film_actor.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store">
+    <d2rq:classDefinitionLabel>store</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/store"/>
+    <d2rq:uriPattern>store/@@store.store_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_actor_id__ref">
+    <d2rq:join>film_actor.actor_id =&gt; actor.actor_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_actor_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_active">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <d2rq:column>staff.active</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff active</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_active"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory">
+    <d2rq:classDefinitionLabel>inventory</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/inventory"/>
+    <d2rq:uriPattern>inventory/@@inventory.inventory_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category__label">
+    <d2rq:pattern>category #@@category.category_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city__label">
+    <d2rq:pattern>city #@@city.city_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_title">
+    <d2rq:column>film.title</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film title</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_title"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_email">
+    <d2rq:column>staff.email</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff email</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_email"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor">
+    <d2rq:classDefinitionLabel>actor</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/actor"/>
+    <d2rq:uriPattern>actor/@@actor.actor_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_manager_staff_id__ref">
+    <d2rq:join>store.manager_staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_manager_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category">
+    <d2rq:classDefinitionLabel>film_category</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_category"/>
+    <d2rq:uriPattern>film_category/@@film_category.category_id@@/@@film_category.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_address_id__ref">
+    <d2rq:join>staff.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>category.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_picture">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <d2rq:column>staff.picture</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff picture</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_picture"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>address.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_first_name">
+    <d2rq:column>staff.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff">
+    <d2rq:classDefinitionLabel>staff</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/staff"/>
+    <d2rq:uriPattern>staff/@@staff.staff_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer">
+    <d2rq:classDefinitionLabel>customer</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/customer"/>
+    <d2rq:uriPattern>customer/@@customer.customer_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_return_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.return_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental return_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_return_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_username">
+    <d2rq:column>staff.username</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff username</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_username"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store__label">
+    <d2rq:pattern>store #@@store.store_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_staff_id__ref">
+    <d2rq:join>payment.staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_country_id__ref">
+    <d2rq:join>city.country_id =&gt; country.country_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_country_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address__label">
+    <d2rq:pattern>address #@@address.address_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_customer_id__ref">
+    <d2rq:join>rental.customer_id =&gt; customer.customer_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>inventory.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>inventory last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rental_rate">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>film.rental_rate</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rental_rate</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rental_rate"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_replacement_cost">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>film.replacement_cost</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film replacement_cost</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_replacement_cost"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_city_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>city.city_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city city_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_city_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_location">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <d2rq:column>address.location</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address location</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_location"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>actor.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_customer_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>customer.customer_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer customer_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_payment_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>payment.payment_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment payment_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_payment_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film_actor.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_actor last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_name">
+    <d2rq:column>category.name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory__label">
+    <d2rq:pattern>inventory #@@inventory.inventory_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>city.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text">
+    <d2rq:classDefinitionLabel>film_text</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_text"/>
+    <d2rq:uriPattern>film_text/@@film_text.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_title">
+    <d2rq:column>film_text.title</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text title</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_title"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text__label">
+    <d2rq:pattern>film_text #@@film_text.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_original_language_id__ref">
+    <d2rq:join>film.original_language_id =&gt; language.language_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_original_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_store_id__ref">
+    <d2rq:join>customer.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_store_id__ref">
+    <d2rq:join>staff.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>language.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_rental_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.rental_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental rental_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_rental_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_film_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.film_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film film_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_store_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>store.store_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>store store_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_rental_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>rental.rental_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental rental_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_rental_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_country">
+    <d2rq:column>country.country</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country country</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_country"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment">
+    <d2rq:classDefinitionLabel>payment</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/payment"/>
+    <d2rq:uriPattern>payment/@@payment.payment_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_country_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>country.country_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country country_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_country_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_rental_id__ref">
+    <d2rq:join>payment.rental_id =&gt; rental.rental_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_rental_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_film_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film_text.film_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text film_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>address.address_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_length">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.length</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film length</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_length"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address">
+    <d2rq:column>address.address</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>payment.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_payment_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>payment.payment_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment payment_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_payment_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_release_year">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <d2rq:column>film.release_year</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film release_year</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_release_year"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_special_features">
+    <d2rq:column>film.special_features</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film special_features</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_special_features"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_name">
+    <d2rq:column>language.name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category__label">
+    <d2rq:pattern>film_category #@@film_category.category_id@@/@@film_category.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rating">
+    <d2rq:column>film.rating</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rating</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rating"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_staff_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>staff.staff_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff staff_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_first_name">
+    <d2rq:column>actor.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category">
+    <d2rq:classDefinitionLabel>category</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/category"/>
+    <d2rq:uriPattern>category/@@category.category_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff__label">
+    <d2rq:pattern>staff #@@staff.staff_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#database">
+    <jdbc:zeroDateTimeBehavior>convertToNull</jdbc:zeroDateTimeBehavior>
+    <jdbc:autoReconnect>true</jdbc:autoReconnect>
+    <d2rq:password>Manoharan</d2rq:password>
+    <d2rq:username>root</d2rq:username>
+    <d2rq:jdbcDSN>jdbc:mysql://localhost:3306/sample_db</d2rq:jdbcDSN>
+    <d2rq:jdbcDriver>com.mysql.jdbc.Driver</d2rq:jdbcDriver>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#Database"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor__label">
+    <d2rq:pattern>film_actor #@@film_actor.actor_id@@/@@film_actor.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_category_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>category.category_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category category_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_category_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_category_id__ref">
+    <d2rq:join>film_category.category_id =&gt; category.category_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_category_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_first_name">
+    <d2rq:column>customer.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_inventory_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>inventory.inventory_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>inventory inventory_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_inventory_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_phone">
+    <d2rq:column>address.phone</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address phone</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_phone"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_email">
+    <d2rq:column>customer.email</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer email</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_email"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_last_name">
+    <d2rq:column>customer.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_active">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <d2rq:column>customer.active</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer active</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_active"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_postal_code">
+    <d2rq:column>address.postal_code</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address postal_code</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_postal_code"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_city_id__ref">
+    <d2rq:join>address.city_id =&gt; city.city_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_city_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_language_id__ref">
+    <d2rq:join>film.language_id =&gt; language.language_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment__label">
+    <d2rq:pattern>payment #@@payment.payment_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film_category.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_category last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_inventory_id__ref">
+    <d2rq:join>rental.inventory_id =&gt; inventory.inventory_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_inventory_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_store_id__ref">
+    <d2rq:join>inventory.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_film_id__ref">
+    <d2rq:join>film_category.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_film_id__ref">
+    <d2rq:join>inventory.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film__label">
+    <d2rq:pattern>film #@@film.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental">
+    <d2rq:classDefinitionLabel>rental</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/rental"/>
+    <d2rq:uriPattern>rental/@@rental.rental_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_description">
+    <d2rq:column>film_text.description</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text description</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_description"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film">
+    <d2rq:classDefinitionLabel>film</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film"/>
+    <d2rq:uriPattern>film/@@film.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_city">
+    <d2rq:column>city.city</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city city</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_city"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country">
+    <d2rq:classDefinitionLabel>country</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/country"/>
+    <d2rq:uriPattern>country/@@country.country_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country__label">
+    <d2rq:pattern>country #@@country.country_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>customer.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_district">
+    <d2rq:column>address.district</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address district</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_district"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_staff_id__ref">
+    <d2rq:join>rental.staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_language_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>language.language_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language language_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language__label">
+    <d2rq:pattern>language #@@language.language_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address">
+    <d2rq:classDefinitionLabel>address</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/address"/>
+    <d2rq:uriPattern>address/@@address.address_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>store.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>store last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_customer_id__ref">
+    <d2rq:join>payment.customer_id =&gt; customer.customer_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor">
+    <d2rq:classDefinitionLabel>film_actor</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_actor"/>
+    <d2rq:uriPattern>film_actor/@@film_actor.actor_id@@/@@film_actor.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_address_id__ref">
+    <d2rq:join>customer.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor__label">
+    <d2rq:pattern>actor #@@actor.actor_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address2">
+    <d2rq:column>address.address2</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address2</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address2"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental__label">
+    <d2rq:pattern>rental #@@rental.rental_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_description">
+    <d2rq:column>film.description</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film description</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_description"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>staff.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rental_duration">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.rental_duration</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rental_duration</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rental_duration"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer__label">
+    <d2rq:pattern>customer #@@customer.customer_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_amount">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>payment.amount</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment amount</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_amount"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city">
+    <d2rq:classDefinitionLabel>city</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/city"/>
+    <d2rq:uriPattern>city/@@city.city_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_last_name">
+    <d2rq:column>actor.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language">
+    <d2rq:classDefinitionLabel>language</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/language"/>
+    <d2rq:uriPattern>language/@@language.language_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_address_id__ref">
+    <d2rq:join>store.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+</rdf:RDF>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:d2rq="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:jdbc="http://d2rq.org/terms/jdbc/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:map="http://localhost:2020/#"
+    xmlns:vocab="http://localhost:2020/vocab/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:db="http://localhost:2020/" > 
+  <rdf:Description rdf:about="http://localhost:2020/#customer_create_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>customer.create_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer create_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_create_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_last_name">
+    <d2rq:column>staff.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>country.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_password">
+    <d2rq:column>staff.password</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff password</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_password"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_actor_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>actor.actor_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor actor_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_actor_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_film_id__ref">
+    <d2rq:join>film_actor.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store">
+    <d2rq:classDefinitionLabel>store</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/store"/>
+    <d2rq:uriPattern>store/@@store.store_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_actor_id__ref">
+    <d2rq:join>film_actor.actor_id =&gt; actor.actor_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_actor_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_active">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <d2rq:column>staff.active</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff active</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_active"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory">
+    <d2rq:classDefinitionLabel>inventory</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/inventory"/>
+    <d2rq:uriPattern>inventory/@@inventory.inventory_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category__label">
+    <d2rq:pattern>category #@@category.category_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city__label">
+    <d2rq:pattern>city #@@city.city_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_title">
+    <d2rq:column>film.title</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film title</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_title"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_email">
+    <d2rq:column>staff.email</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff email</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_email"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor">
+    <d2rq:classDefinitionLabel>actor</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/actor"/>
+    <d2rq:uriPattern>actor/@@actor.actor_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_manager_staff_id__ref">
+    <d2rq:join>store.manager_staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_manager_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category">
+    <d2rq:classDefinitionLabel>film_category</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_category"/>
+    <d2rq:uriPattern>film_category/@@film_category.category_id@@/@@film_category.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_address_id__ref">
+    <d2rq:join>staff.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>category.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_picture">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <d2rq:column>staff.picture</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff picture</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_picture"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>address.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_first_name">
+    <d2rq:column>staff.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff">
+    <d2rq:classDefinitionLabel>staff</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/staff"/>
+    <d2rq:uriPattern>staff/@@staff.staff_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer">
+    <d2rq:classDefinitionLabel>customer</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/customer"/>
+    <d2rq:uriPattern>customer/@@customer.customer_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_return_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.return_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental return_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_return_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_username">
+    <d2rq:column>staff.username</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff username</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_username"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store__label">
+    <d2rq:pattern>store #@@store.store_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_staff_id__ref">
+    <d2rq:join>payment.staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_country_id__ref">
+    <d2rq:join>city.country_id =&gt; country.country_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_country_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address__label">
+    <d2rq:pattern>address #@@address.address_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_customer_id__ref">
+    <d2rq:join>rental.customer_id =&gt; customer.customer_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>inventory.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>inventory last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rental_rate">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>film.rental_rate</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rental_rate</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rental_rate"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_replacement_cost">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>film.replacement_cost</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film replacement_cost</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_replacement_cost"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_city_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>city.city_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city city_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_city_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_location">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <d2rq:column>address.location</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address location</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_location"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>actor.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_customer_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>customer.customer_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer customer_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_payment_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>payment.payment_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment payment_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_payment_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film_actor.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_actor last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_actor_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_name">
+    <d2rq:column>category.name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory__label">
+    <d2rq:pattern>inventory #@@inventory.inventory_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>city.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text">
+    <d2rq:classDefinitionLabel>film_text</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_text"/>
+    <d2rq:uriPattern>film_text/@@film_text.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_title">
+    <d2rq:column>film_text.title</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text title</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_title"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text__label">
+    <d2rq:pattern>film_text #@@film_text.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_original_language_id__ref">
+    <d2rq:join>film.original_language_id =&gt; language.language_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_original_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_store_id__ref">
+    <d2rq:join>customer.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_store_id__ref">
+    <d2rq:join>staff.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>language.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_rental_date">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.rental_date</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental rental_date</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_rental_date"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_film_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.film_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film film_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_store_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>store.store_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>store store_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_rental_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>rental.rental_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental rental_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_rental_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_country">
+    <d2rq:column>country.country</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country country</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_country"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment">
+    <d2rq:classDefinitionLabel>payment</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/payment"/>
+    <d2rq:uriPattern>payment/@@payment.payment_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country_country_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>country.country_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>country country_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/country_country_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_rental_id__ref">
+    <d2rq:join>payment.rental_id =&gt; rental.rental_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_rental_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_film_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film_text.film_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text film_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>address.address_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_length">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.length</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film length</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_length"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address">
+    <d2rq:column>address.address</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>payment.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_payment_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>payment.payment_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment payment_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_payment_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_release_year">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <d2rq:column>film.release_year</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film release_year</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_release_year"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_special_features">
+    <d2rq:column>film.special_features</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film special_features</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_special_features"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_name">
+    <d2rq:column>language.name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category__label">
+    <d2rq:pattern>film_category #@@film_category.category_id@@/@@film_category.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rating">
+    <d2rq:column>film.rating</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rating</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rating"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_staff_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>staff.staff_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff staff_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_first_name">
+    <d2rq:column>actor.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category">
+    <d2rq:classDefinitionLabel>category</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/category"/>
+    <d2rq:uriPattern>category/@@category.category_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff__label">
+    <d2rq:pattern>staff #@@staff.staff_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#database">
+    <jdbc:zeroDateTimeBehavior>convertToNull</jdbc:zeroDateTimeBehavior>
+    <jdbc:autoReconnect>true</jdbc:autoReconnect>
+    <d2rq:password>Manoharan</d2rq:password>
+    <d2rq:username>root</d2rq:username>
+    <d2rq:jdbcDSN>jdbc:mysql://localhost:3306/sample_db</d2rq:jdbcDSN>
+    <d2rq:jdbcDriver>com.mysql.jdbc.Driver</d2rq:jdbcDriver>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#Database"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor__label">
+    <d2rq:pattern>film_actor #@@film_actor.actor_id@@/@@film_actor.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#category_category_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>category.category_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>category category_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/category_category_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_category_id__ref">
+    <d2rq:join>film_category.category_id =&gt; category.category_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#category"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_category_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_first_name">
+    <d2rq:column>customer.first_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer first_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_first_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_inventory_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>inventory.inventory_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>inventory inventory_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_inventory_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_phone">
+    <d2rq:column>address.phone</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address phone</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_phone"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_email">
+    <d2rq:column>customer.email</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer email</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_email"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_last_name">
+    <d2rq:column>customer.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_active">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <d2rq:column>customer.active</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer active</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_active"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_postal_code">
+    <d2rq:column>address.postal_code</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address postal_code</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_postal_code"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_city_id__ref">
+    <d2rq:join>address.city_id =&gt; city.city_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_city_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_language_id__ref">
+    <d2rq:join>film.language_id =&gt; language.language_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment__label">
+    <d2rq:pattern>payment #@@payment.payment_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film_category.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_category last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_inventory_id__ref">
+    <d2rq:join>rental.inventory_id =&gt; inventory.inventory_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_inventory_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_store_id__ref">
+    <d2rq:join>inventory.store_id =&gt; store.store_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_store_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_category_film_id__ref">
+    <d2rq:join>film_category.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_category_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_category"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#inventory_film_id__ref">
+    <d2rq:join>inventory.film_id =&gt; film.film_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/inventory_film_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#inventory"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film__label">
+    <d2rq:pattern>film #@@film.film_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental">
+    <d2rq:classDefinitionLabel>rental</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/rental"/>
+    <d2rq:uriPattern>rental/@@rental.rental_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_text_description">
+    <d2rq:column>film_text.description</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film_text description</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_text_description"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film_text"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film">
+    <d2rq:classDefinitionLabel>film</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film"/>
+    <d2rq:uriPattern>film/@@film.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city_city">
+    <d2rq:column>city.city</d2rq:column>
+    <d2rq:propertyDefinitionLabel>city city</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/city_city"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#city"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country">
+    <d2rq:classDefinitionLabel>country</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/country"/>
+    <d2rq:uriPattern>country/@@country.country_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#country__label">
+    <d2rq:pattern>country #@@country.country_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#country"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>customer.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>customer last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_district">
+    <d2rq:column>address.district</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address district</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_district"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_staff_id__ref">
+    <d2rq:join>rental.staff_id =&gt; staff.staff_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_staff_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language_language_id">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>language.language_id</d2rq:column>
+    <d2rq:propertyDefinitionLabel>language language_id</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/language_language_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language__label">
+    <d2rq:pattern>language #@@language.language_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#language"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address">
+    <d2rq:classDefinitionLabel>address</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/address"/>
+    <d2rq:uriPattern>address/@@address.address_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>store.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>store last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_customer_id__ref">
+    <d2rq:join>payment.customer_id =&gt; customer.customer_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_customer_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_actor">
+    <d2rq:classDefinitionLabel>film_actor</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/film_actor"/>
+    <d2rq:uriPattern>film_actor/@@film_actor.actor_id@@/@@film_actor.film_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer_address_id__ref">
+    <d2rq:join>customer.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/customer_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor__label">
+    <d2rq:pattern>actor #@@actor.actor_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#address_address2">
+    <d2rq:column>address.address2</d2rq:column>
+    <d2rq:propertyDefinitionLabel>address address2</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/address_address2"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental__label">
+    <d2rq:pattern>rental #@@rental.rental_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_description">
+    <d2rq:column>film.description</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film description</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_description"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#staff_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>staff.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>staff last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/staff_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#staff"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_rental_duration">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <d2rq:column>film.rental_duration</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film rental_duration</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_rental_duration"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#customer__label">
+    <d2rq:pattern>customer #@@customer.customer_id@@</d2rq:pattern>
+    <d2rq:property rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#customer"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#film_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>film.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>film last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/film_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#film"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#rental_last_update">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <d2rq:column>rental.last_update</d2rq:column>
+    <d2rq:propertyDefinitionLabel>rental last_update</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/rental_last_update"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#rental"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#payment_amount">
+    <d2rq:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <d2rq:column>payment.amount</d2rq:column>
+    <d2rq:propertyDefinitionLabel>payment amount</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/payment_amount"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#payment"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#city">
+    <d2rq:classDefinitionLabel>city</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/city"/>
+    <d2rq:uriPattern>city/@@city.city_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#actor_last_name">
+    <d2rq:column>actor.last_name</d2rq:column>
+    <d2rq:propertyDefinitionLabel>actor last_name</d2rq:propertyDefinitionLabel>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/actor_last_name"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#actor"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#language">
+    <d2rq:classDefinitionLabel>language</d2rq:classDefinitionLabel>
+    <d2rq:class rdf:resource="http://localhost:2020/vocab/language"/>
+    <d2rq:uriPattern>language/@@language.language_id@@</d2rq:uriPattern>
+    <d2rq:dataStorage rdf:resource="http://localhost:2020/#database"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#ClassMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:2020/#store_address_id__ref">
+    <d2rq:join>store.address_id =&gt; address.address_id</d2rq:join>
+    <d2rq:refersToClassMap rdf:resource="http://localhost:2020/#address"/>
+    <d2rq:property rdf:resource="http://localhost:2020/vocab/store_address_id"/>
+    <d2rq:belongsToClassMap rdf:resource="http://localhost:2020/#store"/>
+    <rdf:type rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#PropertyBridge"/>
+  </rdf:Description>
+</rdf:RDF>

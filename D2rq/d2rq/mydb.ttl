@@ -1,0 +1,809 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/sample_db";
+	d2rq:username "root";
+	d2rq:password "Manoharan";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table actor
+map:actor a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "actor/@@actor.actor_id@@";
+	d2rq:class vocab:actor;
+	d2rq:classDefinitionLabel "actor";
+	.
+<#actor__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:actor;
+	d2rq:property rdfs:label;
+	d2rq:pattern "actor #@@actor.actor_id@@";
+	.
+<#actor_actor_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:actor;
+	d2rq:property <vocab/actor_actor_id>;
+	d2rq:propertyDefinitionLabel "actor actor_id";
+	d2rq:column "actor.actor_id";
+	d2rq:datatype xsd:integer;
+	.
+<#actor_first_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:actor;
+	d2rq:property <vocab/actor_first_name>;
+	d2rq:propertyDefinitionLabel "actor first_name";
+	d2rq:column "actor.first_name";
+	.
+<#actor_last_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:actor;
+	d2rq:property <vocab/actor_last_name>;
+	d2rq:propertyDefinitionLabel "actor last_name";
+	d2rq:column "actor.last_name";
+	.
+<#actor_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:actor;
+	d2rq:property <vocab/actor_last_update>;
+	d2rq:propertyDefinitionLabel "actor last_update";
+	d2rq:column "actor.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+
+# Table address
+<#address> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "address/@@address.address_id@@";
+	d2rq:class <vocab/address>;
+	d2rq:classDefinitionLabel "address";
+	.
+<#address__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "address #@@address.address_id@@";
+	.
+<#address_address_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_address_id>;
+	d2rq:propertyDefinitionLabel "address address_id";
+	d2rq:column "address.address_id";
+	d2rq:datatype xsd:integer;
+	.
+<#address_address> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_address>;
+	d2rq:propertyDefinitionLabel "address address";
+	d2rq:column "address.address";
+	.
+<#address_address2> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_address2>;
+	d2rq:propertyDefinitionLabel "address address2";
+	d2rq:column "address.address2";
+	.
+<#address_district> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_district>;
+	d2rq:propertyDefinitionLabel "address district";
+	d2rq:column "address.district";
+	.
+<#address_postal_code> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_postal_code>;
+	d2rq:propertyDefinitionLabel "address postal_code";
+	d2rq:column "address.postal_code";
+	.
+<#address_phone> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_phone>;
+	d2rq:propertyDefinitionLabel "address phone";
+	d2rq:column "address.phone";
+	.
+<#address_location> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_location>;
+	d2rq:propertyDefinitionLabel "address location";
+	d2rq:column "address.location";
+	d2rq:datatype xsd:hexBinary;
+	.
+<#address_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_last_update>;
+	d2rq:propertyDefinitionLabel "address last_update";
+	d2rq:column "address.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#address_city_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#address>;
+	d2rq:property <vocab/address_city_id>;
+	d2rq:refersToClassMap <#city>;
+	d2rq:join "address.city_id => city.city_id";
+	.
+
+# Table category
+<#category> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "category/@@category.category_id@@";
+	d2rq:class <vocab/category>;
+	d2rq:classDefinitionLabel "category";
+	.
+<#category__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#category>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "category #@@category.category_id@@";
+	.
+<#category_category_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#category>;
+	d2rq:property <vocab/category_category_id>;
+	d2rq:propertyDefinitionLabel "category category_id";
+	d2rq:column "category.category_id";
+	d2rq:datatype xsd:integer;
+	.
+<#category_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#category>;
+	d2rq:property <vocab/category_name>;
+	d2rq:propertyDefinitionLabel "category name";
+	d2rq:column "category.name";
+	.
+<#category_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#category>;
+	d2rq:property <vocab/category_last_update>;
+	d2rq:propertyDefinitionLabel "category last_update";
+	d2rq:column "category.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+
+# Table city
+<#city> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "city/@@city.city_id@@";
+	d2rq:class <vocab/city>;
+	d2rq:classDefinitionLabel "city";
+	.
+<#city__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#city>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "city #@@city.city_id@@";
+	.
+<#city_city_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#city>;
+	d2rq:property <vocab/city_city_id>;
+	d2rq:propertyDefinitionLabel "city city_id";
+	d2rq:column "city.city_id";
+	d2rq:datatype xsd:integer;
+	.
+<#city_city> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#city>;
+	d2rq:property <vocab/city_city>;
+	d2rq:propertyDefinitionLabel "city city";
+	d2rq:column "city.city";
+	.
+<#city_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#city>;
+	d2rq:property <vocab/city_last_update>;
+	d2rq:propertyDefinitionLabel "city last_update";
+	d2rq:column "city.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#city_country_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#city>;
+	d2rq:property <vocab/city_country_id>;
+	d2rq:refersToClassMap <#country>;
+	d2rq:join "city.country_id => country.country_id";
+	.
+
+# Table country
+<#country> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "country/@@country.country_id@@";
+	d2rq:class <vocab/country>;
+	d2rq:classDefinitionLabel "country";
+	.
+<#country__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#country>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "country #@@country.country_id@@";
+	.
+<#country_country_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#country>;
+	d2rq:property <vocab/country_country_id>;
+	d2rq:propertyDefinitionLabel "country country_id";
+	d2rq:column "country.country_id";
+	d2rq:datatype xsd:integer;
+	.
+<#country_country> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#country>;
+	d2rq:property <vocab/country_country>;
+	d2rq:propertyDefinitionLabel "country country";
+	d2rq:column "country.country";
+	.
+<#country_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#country>;
+	d2rq:property <vocab/country_last_update>;
+	d2rq:propertyDefinitionLabel "country last_update";
+	d2rq:column "country.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+
+# Table customer
+<#customer> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "customer/@@customer.customer_id@@";
+	d2rq:class <vocab/customer>;
+	d2rq:classDefinitionLabel "customer";
+	.
+<#customer__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "customer #@@customer.customer_id@@";
+	.
+<#customer_customer_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_customer_id>;
+	d2rq:propertyDefinitionLabel "customer customer_id";
+	d2rq:column "customer.customer_id";
+	d2rq:datatype xsd:integer;
+	.
+<#customer_first_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_first_name>;
+	d2rq:propertyDefinitionLabel "customer first_name";
+	d2rq:column "customer.first_name";
+	.
+<#customer_last_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_last_name>;
+	d2rq:propertyDefinitionLabel "customer last_name";
+	d2rq:column "customer.last_name";
+	.
+<#customer_email> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_email>;
+	d2rq:propertyDefinitionLabel "customer email";
+	d2rq:column "customer.email";
+	.
+<#customer_active> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_active>;
+	d2rq:propertyDefinitionLabel "customer active";
+	d2rq:column "customer.active";
+	d2rq:datatype xsd:boolean;
+	.
+<#customer_create_date> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_create_date>;
+	d2rq:propertyDefinitionLabel "customer create_date";
+	d2rq:column "customer.create_date";
+	d2rq:datatype xsd:dateTime;
+	.
+<#customer_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_last_update>;
+	d2rq:propertyDefinitionLabel "customer last_update";
+	d2rq:column "customer.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#customer_address_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_address_id>;
+	d2rq:refersToClassMap <#address>;
+	d2rq:join "customer.address_id => address.address_id";
+	.
+<#customer_store_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#customer>;
+	d2rq:property <vocab/customer_store_id>;
+	d2rq:refersToClassMap <#store>;
+	d2rq:join "customer.store_id => store.store_id";
+	.
+
+# Table film
+<#film> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "film/@@film.film_id@@";
+	d2rq:class <vocab/film>;
+	d2rq:classDefinitionLabel "film";
+	.
+<#film__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "film #@@film.film_id@@";
+	.
+<#film_film_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_film_id>;
+	d2rq:propertyDefinitionLabel "film film_id";
+	d2rq:column "film.film_id";
+	d2rq:datatype xsd:integer;
+	.
+<#film_title> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_title>;
+	d2rq:propertyDefinitionLabel "film title";
+	d2rq:column "film.title";
+	.
+<#film_description> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_description>;
+	d2rq:propertyDefinitionLabel "film description";
+	d2rq:column "film.description";
+	.
+<#film_release_year> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_release_year>;
+	d2rq:propertyDefinitionLabel "film release_year";
+	d2rq:column "film.release_year";
+	d2rq:datatype xsd:date;
+	.
+<#film_rental_duration> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_rental_duration>;
+	d2rq:propertyDefinitionLabel "film rental_duration";
+	d2rq:column "film.rental_duration";
+	d2rq:datatype xsd:integer;
+	.
+<#film_rental_rate> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_rental_rate>;
+	d2rq:propertyDefinitionLabel "film rental_rate";
+	d2rq:column "film.rental_rate";
+	d2rq:datatype xsd:decimal;
+	.
+<#film_length> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_length>;
+	d2rq:propertyDefinitionLabel "film length";
+	d2rq:column "film.length";
+	d2rq:datatype xsd:integer;
+	.
+<#film_replacement_cost> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_replacement_cost>;
+	d2rq:propertyDefinitionLabel "film replacement_cost";
+	d2rq:column "film.replacement_cost";
+	d2rq:datatype xsd:decimal;
+	.
+<#film_rating> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_rating>;
+	d2rq:propertyDefinitionLabel "film rating";
+	d2rq:column "film.rating";
+	.
+<#film_special_features> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_special_features>;
+	d2rq:propertyDefinitionLabel "film special_features";
+	d2rq:column "film.special_features";
+	.
+<#film_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_last_update>;
+	d2rq:propertyDefinitionLabel "film last_update";
+	d2rq:column "film.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#film_language_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_language_id>;
+	d2rq:refersToClassMap <#language>;
+	d2rq:join "film.language_id => language.language_id";
+	.
+<#film_original_language_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film>;
+	d2rq:property <vocab/film_original_language_id>;
+	d2rq:refersToClassMap <#language>;
+	d2rq:join "film.original_language_id => language.language_id";
+	.
+
+# Table film_actor
+<#film_actor> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "film_actor/@@film_actor.actor_id@@/@@film_actor.film_id@@";
+	d2rq:class <vocab/film_actor>;
+	d2rq:classDefinitionLabel "film_actor";
+	.
+<#film_actor__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_actor>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "film_actor #@@film_actor.actor_id@@/@@film_actor.film_id@@";
+	.
+<#film_actor_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_actor>;
+	d2rq:property <vocab/film_actor_last_update>;
+	d2rq:propertyDefinitionLabel "film_actor last_update";
+	d2rq:column "film_actor.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#film_actor_film_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_actor>;
+	d2rq:property <vocab/film_actor_film_id>;
+	d2rq:refersToClassMap <#film>;
+	d2rq:join "film_actor.film_id => film.film_id";
+	.
+<#film_actor_actor_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_actor>;
+	d2rq:property <vocab/film_actor_actor_id>;
+	d2rq:refersToClassMap map:actor;
+	d2rq:join "film_actor.actor_id => actor.actor_id";
+	.
+
+# Table film_category
+<#film_category> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "film_category/@@film_category.category_id@@/@@film_category.film_id@@";
+	d2rq:class <vocab/film_category>;
+	d2rq:classDefinitionLabel "film_category";
+	.
+<#film_category__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_category>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "film_category #@@film_category.category_id@@/@@film_category.film_id@@";
+	.
+<#film_category_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_category>;
+	d2rq:property <vocab/film_category_last_update>;
+	d2rq:propertyDefinitionLabel "film_category last_update";
+	d2rq:column "film_category.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#film_category_category_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_category>;
+	d2rq:property <vocab/film_category_category_id>;
+	d2rq:refersToClassMap <#category>;
+	d2rq:join "film_category.category_id => category.category_id";
+	.
+<#film_category_film_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_category>;
+	d2rq:property <vocab/film_category_film_id>;
+	d2rq:refersToClassMap <#film>;
+	d2rq:join "film_category.film_id => film.film_id";
+	.
+
+# Table film_text
+<#film_text> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "film_text/@@film_text.film_id@@";
+	d2rq:class <vocab/film_text>;
+	d2rq:classDefinitionLabel "film_text";
+	.
+<#film_text__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_text>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "film_text #@@film_text.film_id@@";
+	.
+<#film_text_film_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_text>;
+	d2rq:property <vocab/film_text_film_id>;
+	d2rq:propertyDefinitionLabel "film_text film_id";
+	d2rq:column "film_text.film_id";
+	d2rq:datatype xsd:integer;
+	.
+<#film_text_title> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_text>;
+	d2rq:property <vocab/film_text_title>;
+	d2rq:propertyDefinitionLabel "film_text title";
+	d2rq:column "film_text.title";
+	.
+<#film_text_description> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#film_text>;
+	d2rq:property <vocab/film_text_description>;
+	d2rq:propertyDefinitionLabel "film_text description";
+	d2rq:column "film_text.description";
+	.
+
+# Table inventory
+<#inventory> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "inventory/@@inventory.inventory_id@@";
+	d2rq:class <vocab/inventory>;
+	d2rq:classDefinitionLabel "inventory";
+	.
+<#inventory__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#inventory>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "inventory #@@inventory.inventory_id@@";
+	.
+<#inventory_inventory_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#inventory>;
+	d2rq:property <vocab/inventory_inventory_id>;
+	d2rq:propertyDefinitionLabel "inventory inventory_id";
+	d2rq:column "inventory.inventory_id";
+	d2rq:datatype xsd:integer;
+	.
+<#inventory_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#inventory>;
+	d2rq:property <vocab/inventory_last_update>;
+	d2rq:propertyDefinitionLabel "inventory last_update";
+	d2rq:column "inventory.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#inventory_film_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#inventory>;
+	d2rq:property <vocab/inventory_film_id>;
+	d2rq:refersToClassMap <#film>;
+	d2rq:join "inventory.film_id => film.film_id";
+	.
+<#inventory_store_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#inventory>;
+	d2rq:property <vocab/inventory_store_id>;
+	d2rq:refersToClassMap <#store>;
+	d2rq:join "inventory.store_id => store.store_id";
+	.
+
+# Table language
+<#language> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "language/@@language.language_id@@";
+	d2rq:class <vocab/language>;
+	d2rq:classDefinitionLabel "language";
+	.
+<#language__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#language>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "language #@@language.language_id@@";
+	.
+<#language_language_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#language>;
+	d2rq:property <vocab/language_language_id>;
+	d2rq:propertyDefinitionLabel "language language_id";
+	d2rq:column "language.language_id";
+	d2rq:datatype xsd:integer;
+	.
+<#language_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#language>;
+	d2rq:property <vocab/language_name>;
+	d2rq:propertyDefinitionLabel "language name";
+	d2rq:column "language.name";
+	.
+<#language_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#language>;
+	d2rq:property <vocab/language_last_update>;
+	d2rq:propertyDefinitionLabel "language last_update";
+	d2rq:column "language.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+
+# Table payment
+<#payment> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "payment/@@payment.payment_id@@";
+	d2rq:class <vocab/payment>;
+	d2rq:classDefinitionLabel "payment";
+	.
+<#payment__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "payment #@@payment.payment_id@@";
+	.
+<#payment_payment_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_payment_id>;
+	d2rq:propertyDefinitionLabel "payment payment_id";
+	d2rq:column "payment.payment_id";
+	d2rq:datatype xsd:integer;
+	.
+<#payment_amount> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_amount>;
+	d2rq:propertyDefinitionLabel "payment amount";
+	d2rq:column "payment.amount";
+	d2rq:datatype xsd:decimal;
+	.
+<#payment_payment_date> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_payment_date>;
+	d2rq:propertyDefinitionLabel "payment payment_date";
+	d2rq:column "payment.payment_date";
+	d2rq:datatype xsd:dateTime;
+	.
+<#payment_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_last_update>;
+	d2rq:propertyDefinitionLabel "payment last_update";
+	d2rq:column "payment.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#payment_customer_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_customer_id>;
+	d2rq:refersToClassMap <#customer>;
+	d2rq:join "payment.customer_id => customer.customer_id";
+	.
+<#payment_staff_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_staff_id>;
+	d2rq:refersToClassMap <#staff>;
+	d2rq:join "payment.staff_id => staff.staff_id";
+	.
+<#payment_rental_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#payment>;
+	d2rq:property <vocab/payment_rental_id>;
+	d2rq:refersToClassMap <#rental>;
+	d2rq:join "payment.rental_id => rental.rental_id";
+	.
+
+# Table rental
+<#rental> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "rental/@@rental.rental_id@@";
+	d2rq:class <vocab/rental>;
+	d2rq:classDefinitionLabel "rental";
+	.
+<#rental__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "rental #@@rental.rental_id@@";
+	.
+<#rental_rental_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_rental_id>;
+	d2rq:propertyDefinitionLabel "rental rental_id";
+	d2rq:column "rental.rental_id";
+	d2rq:datatype xsd:integer;
+	.
+<#rental_rental_date> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_rental_date>;
+	d2rq:propertyDefinitionLabel "rental rental_date";
+	d2rq:column "rental.rental_date";
+	d2rq:datatype xsd:dateTime;
+	.
+<#rental_return_date> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_return_date>;
+	d2rq:propertyDefinitionLabel "rental return_date";
+	d2rq:column "rental.return_date";
+	d2rq:datatype xsd:dateTime;
+	.
+<#rental_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_last_update>;
+	d2rq:propertyDefinitionLabel "rental last_update";
+	d2rq:column "rental.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#rental_customer_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_customer_id>;
+	d2rq:refersToClassMap <#customer>;
+	d2rq:join "rental.customer_id => customer.customer_id";
+	.
+<#rental_inventory_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_inventory_id>;
+	d2rq:refersToClassMap <#inventory>;
+	d2rq:join "rental.inventory_id => inventory.inventory_id";
+	.
+<#rental_staff_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#rental>;
+	d2rq:property <vocab/rental_staff_id>;
+	d2rq:refersToClassMap <#staff>;
+	d2rq:join "rental.staff_id => staff.staff_id";
+	.
+
+# Table staff
+<#staff> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "staff/@@staff.staff_id@@";
+	d2rq:class <vocab/staff>;
+	d2rq:classDefinitionLabel "staff";
+	.
+<#staff__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "staff #@@staff.staff_id@@";
+	.
+<#staff_staff_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_staff_id>;
+	d2rq:propertyDefinitionLabel "staff staff_id";
+	d2rq:column "staff.staff_id";
+	d2rq:datatype xsd:integer;
+	.
+<#staff_first_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_first_name>;
+	d2rq:propertyDefinitionLabel "staff first_name";
+	d2rq:column "staff.first_name";
+	.
+<#staff_last_name> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_last_name>;
+	d2rq:propertyDefinitionLabel "staff last_name";
+	d2rq:column "staff.last_name";
+	.
+<#staff_picture> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_picture>;
+	d2rq:propertyDefinitionLabel "staff picture";
+	d2rq:column "staff.picture";
+	d2rq:datatype xsd:hexBinary;
+	.
+<#staff_email> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_email>;
+	d2rq:propertyDefinitionLabel "staff email";
+	d2rq:column "staff.email";
+	.
+<#staff_active> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_active>;
+	d2rq:propertyDefinitionLabel "staff active";
+	d2rq:column "staff.active";
+	d2rq:datatype xsd:boolean;
+	.
+<#staff_username> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_username>;
+	d2rq:propertyDefinitionLabel "staff username";
+	d2rq:column "staff.username";
+	.
+<#staff_password> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_password>;
+	d2rq:propertyDefinitionLabel "staff password";
+	d2rq:column "staff.password";
+	.
+<#staff_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_last_update>;
+	d2rq:propertyDefinitionLabel "staff last_update";
+	d2rq:column "staff.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#staff_store_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_store_id>;
+	d2rq:refersToClassMap <#store>;
+	d2rq:join "staff.store_id => store.store_id";
+	.
+<#staff_address_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#staff>;
+	d2rq:property <vocab/staff_address_id>;
+	d2rq:refersToClassMap <#address>;
+	d2rq:join "staff.address_id => address.address_id";
+	.
+
+# Table store
+<#store> a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "store/@@store.store_id@@";
+	d2rq:class <vocab/store>;
+	d2rq:classDefinitionLabel "store";
+	.
+<#store__label> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#store>;
+	d2rq:property rdfs:label;
+	d2rq:pattern "store #@@store.store_id@@";
+	.
+<#store_store_id> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#store>;
+	d2rq:property <vocab/store_store_id>;
+	d2rq:propertyDefinitionLabel "store store_id";
+	d2rq:column "store.store_id";
+	d2rq:datatype xsd:integer;
+	.
+<#store_last_update> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#store>;
+	d2rq:property <vocab/store_last_update>;
+	d2rq:propertyDefinitionLabel "store last_update";
+	d2rq:column "store.last_update";
+	d2rq:datatype xsd:dateTime;
+	.
+<#store_manager_staff_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#store>;
+	d2rq:property <vocab/store_manager_staff_id>;
+	d2rq:refersToClassMap <#staff>;
+	d2rq:join "store.manager_staff_id => staff.staff_id";
+	.
+<#store_address_id__ref> a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap <#store>;
+	d2rq:property <vocab/store_address_id>;
+	d2rq:refersToClassMap <#address>;
+	d2rq:join "store.address_id => address.address_id";
+	.
+

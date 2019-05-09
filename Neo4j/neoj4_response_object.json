@@ -1,0 +1,418 @@
+[
+  {
+    "keys": [
+      "p",
+      "rel",
+      "o"
+    ],
+    "length": 3,
+    "_fields": [
+      {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Product"
+        ],
+        "properties": {
+          "productId": {
+            "low": 1,
+            "high": 0
+          },
+          "productName": "Chai",
+          "unitCost": 18
+        }
+      },
+      {
+        "identity": {
+          "low": 2021,
+          "high": 0
+        },
+        "start": {
+          "low": 863,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "CONTAINS",
+        "properties": {
+          "quantityOrdered": {
+            "low": 45,
+            "high": 0
+          }
+        }
+      },
+      {
+        "identity": {
+          "low": 863,
+          "high": 0
+        },
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderDateTime": {
+            "year": {
+              "low": 1998,
+              "high": 0
+            },
+            "month": {
+              "low": 4,
+              "high": 0
+            },
+            "day": {
+              "low": 17,
+              "high": 0
+            },
+            "hour": {
+              "low": 0,
+              "high": 0
+            },
+            "minute": {
+              "low": 0,
+              "high": 0
+            },
+            "second": {
+              "low": 0,
+              "high": 0
+            },
+            "nanosecond": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneOffsetSeconds": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneId": null
+          },
+          "orderId": {
+            "low": 11031,
+            "high": 0
+          },
+          "shipCountry": "USA"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "rel": 1,
+      "o": 2
+    }
+  },
+  {
+    "keys": [
+      "p",
+      "rel",
+      "o"
+    ],
+    "length": 3,
+    "_fields": [
+      {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Product"
+        ],
+        "properties": {
+          "productId": {
+            "low": 1,
+            "high": 0
+          },
+          "productName": "Chai",
+          "unitCost": 18
+        }
+      },
+      {
+        "identity": {
+          "low": 2034,
+          "high": 0
+        },
+        "start": {
+          "low": 867,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "CONTAINS",
+        "properties": {
+          "quantityOrdered": {
+            "low": 10,
+            "high": 0
+          }
+        }
+      },
+      {
+        "identity": {
+          "low": 867,
+          "high": 0
+        },
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderDateTime": {
+            "year": {
+              "low": 1998,
+              "high": 0
+            },
+            "month": {
+              "low": 4,
+              "high": 0
+            },
+            "day": {
+              "low": 20,
+              "high": 0
+            },
+            "hour": {
+              "low": 0,
+              "high": 0
+            },
+            "minute": {
+              "low": 0,
+              "high": 0
+            },
+            "second": {
+              "low": 0,
+              "high": 0
+            },
+            "nanosecond": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneOffsetSeconds": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneId": null
+          },
+          "orderId": {
+            "low": 11035,
+            "high": 0
+          },
+          "shipCountry": "Belgium"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "rel": 1,
+      "o": 2
+    }
+  },
+  {
+    "keys": [
+      "p",
+      "rel",
+      "o"
+    ],
+    "length": 3,
+    "_fields": [
+      {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Product"
+        ],
+        "properties": {
+          "productId": {
+            "low": 1,
+            "high": 0
+          },
+          "productName": "Chai",
+          "unitCost": 18
+        }
+      },
+      {
+        "identity": {
+          "low": 2007,
+          "high": 0
+        },
+        "start": {
+          "low": 857,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "CONTAINS",
+        "properties": {
+          "quantityOrdered": {
+            "low": 10,
+            "high": 0
+          }
+        }
+      },
+      {
+        "identity": {
+          "low": 857,
+          "high": 0
+        },
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderDateTime": {
+            "year": {
+              "low": 1998,
+              "high": 0
+            },
+            "month": {
+              "low": 4,
+              "high": 0
+            },
+            "day": {
+              "low": 15,
+              "high": 0
+            },
+            "hour": {
+              "low": 0,
+              "high": 0
+            },
+            "minute": {
+              "low": 0,
+              "high": 0
+            },
+            "second": {
+              "low": 0,
+              "high": 0
+            },
+            "nanosecond": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneOffsetSeconds": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneId": null
+          },
+          "orderId": {
+            "low": 11025,
+            "high": 0
+          },
+          "shipCountry": "Finland"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "rel": 1,
+      "o": 2
+    }
+  },
+  {
+    "keys": [
+      "p",
+      "rel",
+      "o"
+    ],
+    "length": 3,
+    "_fields": [
+      {
+        "identity": {
+          "low": 0,
+          "high": 0
+        },
+        "labels": [
+          "Product"
+        ],
+        "properties": {
+          "productId": {
+            "low": 1,
+            "high": 0
+          },
+          "productName": "Chai",
+          "unitCost": 18
+        }
+      },
+      {
+        "identity": {
+          "low": 2111,
+          "high": 0
+        },
+        "start": {
+          "low": 902,
+          "high": 0
+        },
+        "end": {
+          "low": 0,
+          "high": 0
+        },
+        "type": "CONTAINS",
+        "properties": {
+          "quantityOrdered": {
+            "low": 40,
+            "high": 0
+          }
+        }
+      },
+      {
+        "identity": {
+          "low": 902,
+          "high": 0
+        },
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderDateTime": {
+            "year": {
+              "low": 1998,
+              "high": 0
+            },
+            "month": {
+              "low": 5,
+              "high": 0
+            },
+            "day": {
+              "low": 5,
+              "high": 0
+            },
+            "hour": {
+              "low": 0,
+              "high": 0
+            },
+            "minute": {
+              "low": 0,
+              "high": 0
+            },
+            "second": {
+              "low": 0,
+              "high": 0
+            },
+            "nanosecond": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneOffsetSeconds": {
+              "low": 0,
+              "high": 0
+            },
+            "timeZoneId": null
+          },
+          "orderId": {
+            "low": 11070,
+            "high": 0
+          },
+          "shipCountry": "Germany"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "rel": 1,
+      "o": 2
+    }
+  }
+]

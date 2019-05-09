@@ -1,0 +1,33 @@
+<jnlp href="VisualBrowser.jnlp" codebase="http://nlp.fi.muni.cz/projekty/vizualni_lexikon">
+
+  <information>
+    <title>Visual Browser v. 1.05</title>
+    <vendor>Natural Language Processing Lab</vendor>
+    <homepage href="http://www.fi.muni.cz/nlp"/>
+    <description>Animated and interactive tool for browsing RDFs.</description>
+    <offline-allowed />
+  </information>
+
+  <security>
+    <all-permissions />
+  </security>
+
+  <resources>
+    <j2se version="1.5" />
+    <jar href="lib/visual.jar" />
+    <jar href="lib/commons-logging.jar" />
+    <jar href="lib/icu4j.jar" />
+    <jar href="lib/jena.jar" />
+    <jar href="lib/postgresql.jar" />
+    <jar href="lib/mysql-connector-java-3.0.10-stable-bin.jar" />
+    <jar href="lib/xercesImpl.jar" />
+    <jar href="lib/batik-awt-util.jar" />
+    <jar href="lib/batik-dom.jar" />
+    <jar href="lib/batik-svggen.jar " />
+    <jar href="lib/batik-util.jar" />
+    <jar href="lib/batik-xml.jar" />
+  </resources>
+
+  <application-desc main-class="cz.muni.fi.xpopelk.visual.VisualBrowser" />
+
+</jnlp>
